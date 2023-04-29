@@ -17,9 +17,10 @@ async function run() {
 
     let hasErrors;
     core.startGroup("Commit messages:");
+    const labelMap = JSON.parse(core.getInput('VALID_LABELS'))
     for (let i = 0; i < extractedCommits.length; i++) {
         let commit = extractedCommits[i];
-        if (isValidCommitMessage(commit.message)) {
+        if (isValidCommitMessage(commit.message, labelMap)) {
             core.info(`✅ ${commit.message}`);
         } else {
             core.info(`🚩 ${commit.message}`);

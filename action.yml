@@ -4,6 +4,10 @@ inputs:
   GITHUB_TOKEN:
     description: 'GitHub token'
     required: false
+  VALID_LABELS:
+    description: 'The default conventional commit categories'
+    required: false
+    default: '["feat","fix","docs","style","refactor","test","build","perf","ci","chore","revert","merge","wip"]'
 runs:
   using: node16
   main: dist/main/index.js
