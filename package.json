@@ -9,14 +9,14 @@
     "@actions/core": "^1.2.3",
     "@actions/exec": "^1.0.3",
     "@actions/github": "^2.1.1",
-    "@types/jest": "^26.0.0",
     "got": "^11.3.0",
     "lodash.get": "^4.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-env": "^7.21.5",
     "@babel/preset-typescript": "^7.10.1",
+    "@types/jest": "^29.5.1",
     "@zeit/ncc": "^0.22.0",
     "babel-jest": "^26.0.1",
     "jest": "^26.0.1",
