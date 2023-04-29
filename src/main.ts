@@ -8,6 +8,10 @@ async function run() {
     core.info(
         `ℹ️ Checking if commit messages are following the Conventional Commits specification...`
     );
+    const labelMap = JSON.parse(core.getInput('VALID_LABELS'))
+    core.info("Foo")
+    core.info(labelMap)
+    core.info("Bar")
 
     const extractedCommits = await extractCommits(context, core);
     if (extractedCommits.length === 0) {
@@ -17,7 +21,6 @@ async function run() {
 
     let hasErrors;
     core.startGroup("Commit messages:");
-    const labelMap = JSON.parse(core.getInput('VALID_LABELS'))
     for (let i = 0; i < extractedCommits.length; i++) {
         let commit = extractedCommits[i];
         if (isValidCommitMessage(commit.message, labelMap)) {
